@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let names = "Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus";
+        let constellations = "Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major, Leo";
+        let arrNames = names.split(", ");
+        let arrConstellations = constellations.split(", ");
+        // console.log(names);
+        // console.log(constellations);
+        let string = prompt("Nhập tên ngôi sao ");
+        string = string.trim();
+        function checkConstellation(string) {
+            let flag = false;
+            let indexStar = 0;
+            for (let i = 0; i < arrNames.length; i++) {
+                if (string === arrNames[i]) {
+                    flag = true;
+                    indexStar = i;
+                }
+
+            }
+            if (flag) {
+                document.write(string + " Có chòm sao là : " + arrConstellations[indexStar]);
+            } else {
+                document.write("Không tồn tại ngôi sao này !");
+            }
+
+
+        }
+        checkConstellation(string);
+
+
+
+    </script>
+</body>
+
+</html>

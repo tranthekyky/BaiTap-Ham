@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+
+    <script>
+        let number1 = prompt("Nhập số thứ nhất");
+        let number2 = prompt("Nhập số thứ hai");
+        function changeNumber(number1, number2) {
+            let number3 = number2 + number1;
+            alert("Số sau khi đc đổi là : " + number3);
+            return number3;
+        }
+        let number3 = changeNumber(number1, number2);
+        console.log(typeof number3);
+    </script>
+</body>
+
+</html>

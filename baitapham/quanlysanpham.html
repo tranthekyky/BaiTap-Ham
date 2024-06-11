@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+</head>
+
+<body>
+    <h3>Add New Product</h3>
+    <input type="text" placeholder="New Product" id="valueInput">
+    <button onclick="addProduct()">Add</button>
+    <h3>Display All Product</h3>
+    <h4>The number of product :</h4><span id="count"></span>
+    <table id="list">
+        <thead>
+            <tr>
+                <td>Product Name</td>
+                <td colspan="2">Update</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Phần này dùng hàm để hiển thị danh sách sản phẩm -->
+
+        </tbody>
+    </table>
+    <script>
+        let arr = ["Sony", "Samsung", "Nokia", "Xiaomi", "Apple"];
+
+        function showProduct() {
+            let count = 0;
+            let tableTbody = ``;
+            for (let i = 0; i < arr.length; i++) {
+                tableTbody +=
+                    `
+                     <tr>
+                         <td>${arr[i]}</td>
+                         <td ><button class="btn-edit" onclick="editProduct(${i})">EDIT</button></td>
+                         <td ><button class="btn-delete" onclick="deleteProduct(${i})">DELETE</button></td>
+                    </tr>
+                     `;
+                count += 1;
+            }
+            document.querySelector("#list tbody").innerHTML = tableTbody;
+        }
+
+        function addProduct() {
+            const newProductInput = document.getElementById("valueInput");
+            const newProduct = newProductInput.value.trim();
+            if (newProduct) {
+                arr.push(newProduct);
+                newProductInput.value = "";
+                showProduct();
+            } else {
+                alert("Vui lòng nhập tên sản phẩm")
+            }
+
+
+        }
+
+        function editProduct(index) {
+            let newName = prompt("Nhập tên muốn đổi", arr[index]);
+            if (newName !== null && newName.trim() !== "") {
+                arr[index] = newName.trim();
+            }
+            showProduct();
+
+        }
+
+        function deleteProduct(index) {
+            if (confirm("Bạn có thực sự muốn xoá !")) {
+                arr.splice(index, 1);
+            }
+            showProduct();
+        }
+        showProduct();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

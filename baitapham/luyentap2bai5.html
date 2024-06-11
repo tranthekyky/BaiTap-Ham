@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    <script>
+        function checkMin(a, b, c) {
+            let min = a;
+            if (min < b && min < c) {
+                min = a;
+                console.log(min);
+            } else {
+                if (b < c) {
+                    min = b;
+                    console.log(min);
+                }
+                if (c < b) {
+                    min = c;
+                    console.log(min);
+                }
+            }
+        }
+        checkMin(5, 3, 2);
+    </script>
+</body>
+
+</html>

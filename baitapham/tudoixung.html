@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPalindrome(s) {
+            s.trim();
+            let flag = "";
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === s[s.length - 1 - i]) {
+                    flag = true;
+                } else {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                alert(s + " Là chuỗi đối xứng");
+            } else {
+                alert(s + " Không phải là chuỗi đói xứng");
+            }
+        }
+        let s = prompt("Nhập chuỗi bạn muốn kiếm tra ");
+        isPalindrome(s);
+    </script>
+
+</body>
+
+</html>

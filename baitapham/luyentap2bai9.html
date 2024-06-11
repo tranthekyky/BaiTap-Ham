@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+        kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+        Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    </p>
+    <script>
+        let str = prompt("Nhập chuỗi kí tự KHÔNG dấu cách ");
+        let n = [prompt("Nhập vào kí tự muốn đếm")];
+        let arr = [];
+        arr = str.split("");
+        console.log(arr);
+        console.log(n);
+        function checkCount(str, n) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (n[0] === arr[i]) {
+                    count += 1;
+                    return count;
+                }
+            }
+            if (count > 0) {
+                alert("Kí tự " + n[0] + " xuất hiện " + count + " lần trong chuỗi");
+            } else {
+                alert("-1");
+            }
+        }
+
+        checkCount(str, n);
+    </script>
+</body>
+
+</html>
